@@ -1,0 +1,8 @@
+---
+# Maintains file names, binary names, and anything that is not a directory or path
+
+# Env file name
+tofnd_environment_secrets_file_name: "{{ service_identifier }}.secrets.env"
+
+# Binary name
+tofnd_default_binary_name: tofnd
