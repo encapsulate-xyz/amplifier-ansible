@@ -7,20 +7,12 @@ default_node_types:
   - validator
   - default
 
-sui:
-  validator:
-    source_url: https://releases.sui.io
+amplifier:
+  tofnd:
+    source_url: https://github.com/axelarnetwork/tofnd/releases/download
     ports:
-      server_listen_port: 9191
-      metrics_port: 9186
-  fullnode:
-    version: 88888888888
-    source_url: https://releases.sui.io
+      default_port: 50051
+  ampd:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
     ports:
-      server_listen_port: 9191
-      metrics_port: 9186
-  bridge:
-    source_url: https://releases.sui.io
-    ports:
-      server_listen_port: 9191
-      metrics_port: 9186
+      health_check_bind_addr: 3000
