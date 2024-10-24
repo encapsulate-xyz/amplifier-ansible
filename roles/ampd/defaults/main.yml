@@ -1,0 +1,16 @@
+---
+# Maintains directories and paths
+ampd_home_dir: /opt/{{ service_identifier }}
+
+ampd_bin_dir: "{{ ampd_home_dir }}/bin"
+ampd_config_dir: "{{ ampd_home_dir }}/config"
+ampd_log_dir: "{{ ampd_home_dir }}/log"
+
+ampd_directories:
+  - "{{ ampd_home_dir }}"
+  - "{{ ampd_bin_dir }}"
+  - "{{ ampd_config_dir }}"
+  - "{{ ampd_log_dir }}"
+
+ampd_config_file_path: "{{ ampd_config_dir }}/{{ ampd_config_file_name }}"
+ampd_log_file_path: "{{ ampd_log_dir }}/{{ service_identifier }}.log"

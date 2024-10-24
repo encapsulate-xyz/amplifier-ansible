@@ -1,0 +1,82 @@
+tm_jsonrpc = "{{ vault.testnet.ampd.axelar.rpc_url }}"
+tm_grpc = "{{ vault.testnet.ampd.axelar.grpc_url }}"
+event_buffer_cap = 100000
+health_check_bind_addr = "127.0.0.0:{{ amplifier.ampd.ports.health_check_bind_addr }}"
+[service_registry]
+cosmwasm_contract = "axelar1rpj2jjrv3vpugx9ake9kgk3s2kgwt0y60wtkmcgfml5m3et0mrls6nct9m"
+
+[broadcast]
+batch_gas_limit = "20000000"
+broadcast_interval = "1s"
+chain_id = "axelar-testnet-lisbon-3"
+gas_adjustment = "2"
+gas_price = "0.007uaxl"
+queue_cap = "1000"
+tx_fetch_interval = "1000ms"
+tx_fetch_max_retries = "15"
+
+[tofnd_config]
+batch_gas_limit = "10000000"
+key_uid = "axelar"
+party_uid = "ampd"
+url = "http://127.0.0.1:{{ amplifier.tofnd.ports.default_port }}"
+
+[[handlers]]
+cosmwasm_contract = "axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
+type = "MultisigSigner"
+
+[[handlers]]
+chain_name = "test-sepolia"
+chain_rpc_url = "{{ vault.testnet.ampd.eth.rpc_url }}"
+cosmwasm_contract = "axelar1r4rmvn83vrfj4evy5l8cv2nat2v0whm36ds3crn2mhlq8ufmhvts9467zz"
+chain_finalization = "RPCFinalizedBlock"
+type = "EvmMsgVerifier"
+
+[[handlers]]
+chain_name = "test-sepolia"
+chain_rpc_url = "{{ vault.testnet.ampd.eth.rpc_url }}"
+cosmwasm_contract = "axelar1r4rmvn83vrfj4evy5l8cv2nat2v0whm36ds3crn2mhlq8ufmhvts9467zz"
+chain_finalization = "RPCFinalizedBlock"
+type = "EvmVerifierSetVerifier"
+
+[[handlers]]
+chain_name = "test-avalanche"
+chain_rpc_url = "{{ vault.testnet.ampd.avalanche.rpc_url }}"
+cosmwasm_contract = "axelar1hupk5du59cgu4ps5s637rhakwsq0060ycdp57j2ccevna7wqqzrqnfrr0p"
+chain_finalization = "ConfirmationHeight"
+type = "EvmMsgVerifier"
+
+[[handlers]]
+chain_name = "test-avalanche"
+chain_rpc_url = "{{ vault.testnet.ampd.avalanche.rpc_url }}"
+cosmwasm_contract = "axelar1hupk5du59cgu4ps5s637rhakwsq0060ycdp57j2ccevna7wqqzrqnfrr0p"
+chain_finalization = "ConfirmationHeight"
+type = "EvmVerifierSetVerifier"
+
+[[handlers]]
+chain_name = "flow"
+chain_rpc_url = "{{ vault.testnet.ampd.flow.rpc_url }}"
+cosmwasm_contract = "axelar1kkqdsqvwq9a7p9fj0w89wpx2m2t0vrxl782aslhq0kdw2xxd2aesv3un04"
+chain_finalization = "RPCFinalizedBlock"
+type = "EvmMsgVerifier"
+
+[[handlers]]
+chain_name = "flow"
+chain_rpc_url = "{{ vault.testnet.ampd.flow.rpc_url }}"
+cosmwasm_contract = "axelar1kkqdsqvwq9a7p9fj0w89wpx2m2t0vrxl782aslhq0kdw2xxd2aesv3un04"
+chain_finalization = "RPCFinalizedBlock"
+type = "EvmVerifierSetVerifier"
+
+[[handlers]]
+chain_name = "hedera"
+chain_rpc_url = "{{ vault.testnet.ampd.hedera.rpc_url }}"
+cosmwasm_contract = "axelar1ce9rcvw8htpwukc048z9kqmyk5zz52d5a7zqn9xlq2pg0mxul9mqxlx2cq"
+chain_finalization = "RPCFinalizedBlock"
+type = "EvmMsgVerifier"
+
+[[handlers]]
+chain_name = "hedera"
+chain_rpc_url = "{{ vault.testnet.ampd.hedera.rpc_url }}"
+cosmwasm_contract = "axelar1ce9rcvw8htpwukc048z9kqmyk5zz52d5a7zqn9xlq2pg0mxul9mqxlx2cq"
+chain_finalization = "RPCFinalizedBlock"
+type = "EvmVerifierSetVerifier"
