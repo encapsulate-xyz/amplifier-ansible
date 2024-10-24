@@ -1,0 +1,43 @@
+---
+- name: Include user creation task
+  ansible.builtin.include_tasks: tasks/create_user_and_directories.yml
+  vars:
+    home: "{{ ampd_home_dir }}"
+    directories: "{{ ampd_directories }}"
+    log_file_path: "{{ ampd_log_file_path }}"
+
+- name: Copy configuration file
+  ansible.builtin.template:
+    src: "{{ env }}/config.toml.j2"
+    dest: "{{ ampd_config_file_path }}"
+    owner: "{{ service_identifier }}"
+    group: "{{ service_identifier }}"
+    mode: "0644"
+  notify:
+    - Restart service
+
+- name: Fetch the service binary
+  vars:
+    suffix_url: >
+      {{ ampd_default_binary_name }}-{{ amplifier.ampd.version }}/{{
+       ampd_default_binary_name }}-{{ ansible_system | lower }}-{{ system_architecture }}-{{ amplifier.ampd.version }}
+  ansible.builtin.get_url:
+    url: "{{ amplifier.ampd.source_url }}/{{ suffix_url }}"
+    dest: "{{ ampd_bin_dir }}/{{ service_identifier }}"
+    owner: root
+    group: root
+    force: true
+    mode: "0755"
+  notify:
+    - Restart service
+
+- name: Copy systemd service file
+  ansible.builtin.template:
+    src: "{{ env }}/systemd.service.j2"
+    dest: /etc/systemd/system/{{ service_identifier }}.service
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+    - Reload service
+    - Restart service

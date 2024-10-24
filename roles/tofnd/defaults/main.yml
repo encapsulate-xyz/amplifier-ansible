@@ -1,0 +1,18 @@
+---
+# Maintains directories and paths
+tofnd_home_dir: /opt/{{ service_identifier }}
+
+tofnd_bin_dir: "{{ tofnd_home_dir }}/bin"
+tofnd_log_dir: "{{ tofnd_home_dir }}/log"
+tofnd_kvstore_dir: "{{ tofnd_home_dir }}/kvstore"
+tofnd_env_dir: "{{ tofnd_home_dir }}/environment"
+
+tofnd_directories:
+  - "{{ tofnd_home_dir }}"
+  - "{{ tofnd_bin_dir }}"
+  - "{{ tofnd_log_dir }}"
+  - "{{ tofnd_kvstore_dir }}"
+  - "{{ tofnd_env_dir }}"
+
+tofnd_log_file_path: "{{ tofnd_log_dir }}/{{ service_identifier }}.log"
+tofnd_environment_secrets_file_path: "{{ tofnd_env_dir }}/{{ tofnd_environment_secrets_file_name }}"

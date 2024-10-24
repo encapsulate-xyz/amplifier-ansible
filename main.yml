@@ -1,0 +1,6 @@
+---
+- name: Setup tofnd
+  import_playbook: setup_tofnd.yml
+
+- name: Deploy ampd
+  import_playbook: setup_ampd.yml

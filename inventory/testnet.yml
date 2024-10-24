@@ -4,11 +4,9 @@ all:
   vars:
     env: testnet
   children:
-    sui:
+    amplifier:
       hosts:
-        bridge.sui.mainnet.encapsulate.xyz:
-          type: bridge
-        validator.sui.mainnet.encapsulate.xyz:
-          type: validator
-        fullnode.sui.mainnet.encapsulate.xyz:
-          type: fullnode
+        143.110.191.217:
+          type: tofnd
+        142.110.191.217:
+          type: tofnd

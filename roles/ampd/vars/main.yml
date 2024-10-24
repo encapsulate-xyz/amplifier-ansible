@@ -1,0 +1,8 @@
+---
+# maintains file name, binary names, and anything which is not a diretcory or path
+
+# config file names
+ampd_config_file_name: config.toml
+
+# binary names
+ampd_default_binary_name: ampd
