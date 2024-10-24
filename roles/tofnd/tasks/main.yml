@@ -1,0 +1,39 @@
+---
+- name: Include user creation task
+  ansible.builtin.include_tasks: tasks/create_user_and_directories.yml
+  vars:
+    home: "{{ tofnd_home_dir }}"
+    directories: "{{ tofnd_directories }}"
+    log_file_path: "{{ tofnd_log_file_path }}"
+
+- name: Fetch the tofnd service binary
+  vars:
+    suffix_url: >
+      {{ amplifier.tofnd.version }}/{{ tofnd_default_binary_name }}-{{ ansible_system | lower }}-{{ system_architecture }}-{{ amplifier.tofnd.version }}
+  ansible.builtin.get_url:
+    url: "{{ amplifier.tofnd.source_url }}/{{ suffix_url }}"
+    dest: "{{ tofnd_bin_dir }}/{{ service_identifier }}"
+    owner: root
+    group: root
+    force: true
+    mode: "0755"
+  notify:
+    - Restart service
+
+- name: Fetch secrets environment file from HCP Vault and save to file
+  ansible.builtin.include_tasks: tasks/get_and_save_vault_secret.yml
+  vars:
+    vault_secret_source_path: "{{ project }}/{{ org }}/{{ type }}/{{ tofnd_environment_secrets_file_name }}"
+    secret_destination_path: "{{ tofnd_environment_secrets_file_path }}"
+    secret_type: environment
+
+- name: Copy systemd service file
+  ansible.builtin.template:
+    src: "{{ env }}/systemd.service.j2"
+    dest: /etc/systemd/system/{{ service_identifier }}.service
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+    - Reload service
+    - Restart service
