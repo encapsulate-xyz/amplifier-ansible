@@ -1,0 +1,25 @@
+---
+- name: Set up tofnd
+  hosts: all
+  become: true
+  gather_facts: true
+  vars:
+    allowed_node_types: [tofnd]
+  vars_files:
+    - group_vars/all.yml
+    - group_vars/vault.yml
+    - group_vars/{{ env }}.yml
+  pre_tasks:
+    - name: Include environment setup tasks
+      when: type in allowed_node_types
+      ansible.builtin.include_tasks: tasks/setup_environment.yml
+  tasks:
+    - name: Setup environment and run bridge role
+      when: type in allowed_node_types
+      block:
+        - name: Include common handlers
+          ansible.builtin.include_role:
+            name: common
+        - name: Include tofnd role
+          ansible.builtin.include_role:
+            name: tofnd
