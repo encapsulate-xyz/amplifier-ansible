@@ -7,6 +7,5 @@ vald_environment_secrets_file_name: "{{ service_identifier }}.secrets.env"
 # binary names
 vald_default_binary_name: axelard
 
-vald_axelar_home: /opt/axelar
 vald_tofnd_host:
 vald_from_address: broadcaster
