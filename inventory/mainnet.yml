@@ -1,5 +1,21 @@
 ---
-# maintains testnet inventory grouped by project names
+# maintains mainnet inventory grouped by project names
 all:
   vars:
     env: mainnet
+  children:
+    amplifier:
+      hosts:
+        143.110.191.217:
+          type: tofnd
+        142.110.191.217:
+          type: ampd
+    axelar:
+      hosts:
+        fullnode.axelar.mainnet.encapsulate.xyz:
+          type: fullnode
+          vald_axelar_home: /opt/axelar-fullnode
+        validator.axelar.mainnet.encapsulate.xyz:
+          type: validator
+          vald_axelar_home: /opt/axelar
+

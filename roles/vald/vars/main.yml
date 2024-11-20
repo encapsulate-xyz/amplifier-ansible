@@ -1,0 +1,11 @@
+---
+# maintains file name, binary names, and anything which is not a diretcory or path
+
+# Env file name
+vald_environment_secrets_file_name: "{{ service_identifier }}.secrets.env"
+
+# binary names
+vald_default_binary_name: axelard
+
+vald_tofnd_host:
+vald_from_address: broadcaster

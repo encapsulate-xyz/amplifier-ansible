@@ -9,4 +9,12 @@ all:
         143.110.191.217:
           type: tofnd
         142.110.191.217:
-          type: tofnd
+          type: ampd
+    axelar:
+      hosts:
+        fullnode.axelar.testnet.encapsulate.xyz:
+          type: fullnode
+          vald_axelar_home: /opt/axelar-fullnode
+        validator.axelar.testnet.encapsulate.xyz:
+          type: validator
+          vald_axelar_home: /opt/axelar

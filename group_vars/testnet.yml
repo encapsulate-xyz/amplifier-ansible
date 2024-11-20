@@ -5,3 +5,9 @@ amplifier:
     version: v1.0.1
   ampd:
     version: v1.2.0
+
+axelar:
+  vald:
+    version: v1.0.4
+    validator_address:
+    chain_id:
