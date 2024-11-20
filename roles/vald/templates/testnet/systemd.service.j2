@@ -7,10 +7,12 @@ Group={{ service_identifier }}
 WorkingDirectory={{ vald_home_dir }}
 EnvironmentFile={{ vald_environment_secrets_file_path }}
 ExecStart=/usr/bin/sh -c 'echo $KEYRING_PASSWORD | {{ vald_bin_dir }}/{{ service_identifier }} vald-start \
-    --home {{ vald_home_dir }} \
-    --chain-id {{ vald_chain_id[env] }} \
-    --validator-addr {{ vald_validator_address[env] }} \
-    --log_level debug --from broadcaster'
+    --home {{ vald_axelar_home }} \
+    --chain-id {{ axelar.vald.chain_id }} \
+    --validator-addr {{ axelar.vald.validator_address }} \
+     --tofnd-host {{ vald_tofnd_host }} \
+    --tofnd-port {{ amplifier.tofnd.ports.default_port }} \
+    --log_level debug --from {{ vald_from_address }}'
 Restart=always
 RestartSec=4
 LimitNOFILE=65536
