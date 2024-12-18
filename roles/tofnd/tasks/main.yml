@@ -26,6 +26,7 @@
     vault_secret_source_path: "{{ project }}/{{ org }}/{{ type }}/{{ tofnd_environment_secrets_file_name }}"
     secret_destination_path: "{{ tofnd_environment_secrets_file_path }}"
     secret_type: environment
+  when: fetch_validator_keys | default(false) | bool
 
 - name: Copy systemd service file
   ansible.builtin.template:

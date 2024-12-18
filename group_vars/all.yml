@@ -27,3 +27,7 @@ amplifier:
 axelar:
   vald:
     source_url: https://github.com/axelarnetwork/axelar-core/releases/download
+  tofnd:
+    source_url: https://github.com/axelarnetwork/tofnd/releases/download
+    ports:
+      default_port: 50050
