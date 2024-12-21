@@ -1,10 +1,10 @@
 ---
 # Maintains directories and paths
-vald_home_dir: "{{ vald_axelar_home }}"
+vald_home_dir: "/opt/{{ service_identifier }}"
 
 vald_bin_dir: "{{ vald_home_dir }}/bin"
 vald_env_dir: "{{ vald_home_dir }}/environment"
-vald_vald_dir: "{{ vald_home_dir }}/vald"
+vald_vald_dir: "{{ vald_axelar_home }}/vald"
 vald_log_dir: "{{ vald_home_dir }}/log"
 
 vald_directories:
