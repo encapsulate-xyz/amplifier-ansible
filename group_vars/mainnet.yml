@@ -11,3 +11,5 @@ axelar:
     version: v1.0.4
     validator_address:
     chain_id:
+  tofnd:
+    version: v1.0.1

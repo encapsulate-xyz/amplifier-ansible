@@ -10,7 +10,7 @@ ExecStart=/usr/bin/sh -c 'echo $KEYRING_PASSWORD | {{ tofnd_bin_dir }}/{{ servic
 Restart=always
 RestartSec=4
 LimitNOFILE=65536
-MemoryLimit=64G
+MemoryMax=64G
 StandardOutput=append:{{ tofnd_log_file_path }}
 StandardError=inherit
 
