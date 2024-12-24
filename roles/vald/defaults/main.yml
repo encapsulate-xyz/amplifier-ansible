@@ -10,6 +10,7 @@ vald_log_dir: "{{ vald_home_dir }}/log"
 vald_vald_dir: "{{ vald_axelar_home }}/vald"
 
 vald_directories:
+  - "{{ vald_home_dir }}"
   - "{{ vald_bin_dir }}"
   - "{{ vald_env_dir }}"
   - "{{ vald_log_dir }}"
