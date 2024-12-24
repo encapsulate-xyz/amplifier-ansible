@@ -8,5 +8,5 @@ vald_environment_wasmvm_file_name: "axelar.wasmvm.env"
 # binary names
 vald_default_binary_name: axelard
 
-vald_broadcaster_address: "localhost"
-vald_from_address: broadcaster
+vald_tofnd_host: "localhost"
+vald_broadcaster_address: broadcaster
