@@ -1,28 +1,10 @@
 ---
-- name: Create system user with no home and nologin
-  ansible.builtin.user:
-    name: "{{ service_identifier }}"
-    system: true
-    shell: /usr/sbin/nologin
-    createhome: false
-    state: present
-
-- name: Create directories
-  ansible.builtin.file:
-    path: "{{ item }}"
-    state: directory
-    owner: "{{ service_identifier }}"
-    group: "{{ service_identifier }}"
-    mode: "0755"
-  loop: "{{ vald_directories }}"
-
-- name: Create log file for the service
-  ansible.builtin.file:
-    path: "{{ vald_log_file_path }}"
-    state: touch
-    owner: "{{ service_identifier }}"
-    group: "{{ service_identifier }}"
-    mode: "0644"
+- name: Include user creation task
+  ansible.builtin.include_tasks: tasks/create_user_and_directories.yml
+  vars:
+    home: "{{ vald_home_dir }}"
+    directories: "{{ vald_directories }}"
+    log_file_path: "{{ vald_log_file_path }}"
 
 - name: Fetch the service binary
   vars:
@@ -44,7 +26,6 @@
     vault_secret_source_path: "{{ project }}/{{ org }}/{{ type }}/{{ vald_environment_secrets_file_name }}"
     secret_destination_path: "{{ vald_environment_secrets_file_path }}"
     secret_type: environment
-  when: fetch_validator_keys | default(false) | bool
 
 - name: Copy systemd service file
   ansible.builtin.template:
