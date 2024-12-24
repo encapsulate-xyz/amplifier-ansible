@@ -8,7 +8,7 @@ WorkingDirectory={{ vald_home_dir }}
 EnvironmentFile={{ vald_environment_secrets_file_path }}
 EnvironmentFile={{ vald_environment_wasmvm_file_path }}
 ExecStart=/usr/bin/sh -c 'echo $KEYRING_PASSWORD | {{ vald_bin_dir }}/{{ service_identifier }} vald-start \
-    --home {{ vald_home_dir }} \
+    --home {{ vald_axelar_home }} \
     --chain-id {{ axelar.vald.chain_id }} \
     --validator-addr {{ axelar.vald.validator_address }} \
     --node {{ axelar.vald.node_address }} \
