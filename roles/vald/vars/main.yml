@@ -3,10 +3,12 @@
 
 # Env file name
 vald_environment_secrets_file_name: "{{ service_identifier }}.secrets.env"
-vald_environment_wasmvm_file_name: "axelar.wasmvm.env"
+
+vald_environment_wasmvm_file_name: "{{ service_identifier }}.wasmvm.env"
+vald_wasmvm_lib_file_name: libwasmvm.{{ ansible_architecture }}.so
 
 # binary names
 vald_default_binary_name: axelard
 
-vald_tofnd_host: "localhost"
+vald_tofnd_host: localhost
 vald_broadcaster_address: broadcaster

@@ -20,6 +20,9 @@
   notify:
     - Restart service
 
+- name: Include wasmvm task
+  ansible.builtin.include_tasks: configure_wasmvm.yml
+
 - name: Fetch secrets environment file from HCP Vault and save to file
   ansible.builtin.include_tasks: tasks/get_and_save_vault_secret.yml
   vars:

@@ -1,0 +1,20 @@
+---
+- name: Download wasmvm from URL
+  vars:
+    suffix_url: "{{ vars[project][type].wasmvm.version }}/{{ vald_wasmvm_lib_file_name }}"
+  ansible.builtin.get_url:
+    url: "{{ wasmvm.source_url }}/{{ suffix_url }}"
+    dest: "{{ vald_wasmvm_lib_file_path }}"
+    owner: "{{ service_identifier }}"
+    group: "{{ service_identifier }}"
+    mode: "0644"
+  notify:
+    - Restart service
+
+- name: Copy environment file
+  ansible.builtin.template:
+    src: "wasmvm.env.j2"
+    dest: "{{ vald_environment_wasmvm_file_path }}"
+    owner: root
+    group: root
+    mode: "0644"
