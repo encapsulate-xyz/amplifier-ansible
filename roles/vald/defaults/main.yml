@@ -8,7 +8,9 @@ vald_vald_dir: "{{ vald_axelar_home }}/vald"
 vald_log_dir: "{{ vald_home_dir }}/log"
 
 vald_directories:
-  - "{{ vald_vald_dir }}"
+  - "{{ vald_bin_dir }}"
+  - "{{ vald_env_dir }}"
+  - "{{ vald_log_dir }}"
 
 vald_log_file_path: "{{ vald_log_dir }}/{{ service_identifier }}.log"
 
