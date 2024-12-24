@@ -12,9 +12,10 @@ all:
           type: ampd
     axelar:
       hosts:
-        fullnode.axelar.testnet.encapsulate.xyz:
-          type: fullnode
-          vald_axelar_home: /opt/axelar-fullnode
-        validator.axelar.testnet.encapsulate.xyz:
-          type: validator
+        axelar_vald_host:
+          ansible_host: validator.axelar.testnet.encapsulate.xyz
+          type: vald
           vald_axelar_home: /opt/axelar
+        axelar_tofnd_host:
+          ansible_host: validator.axelar.testnet.encapsulate.xyz
+          type: tofnd

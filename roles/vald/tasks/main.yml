@@ -9,9 +9,9 @@
 - name: Fetch the service binary
   vars:
     suffix_url: >
-      v{{ amplifier.vald.version }}/{{ vald_default_binary_name }}-{{ ansible_system | lower }}-{{ system_architecture }}-{{ amplifier.vald.version }}
+      {{ axelar.vald.version }}/{{ vald_default_binary_name }}-{{ ansible_system | lower }}-{{ system_architecture }}-{{ axelar.vald.version }}
   ansible.builtin.get_url:
-    url: "{{ amplifier.vald.source_url }}/{{ suffix_url }}"
+    url: "{{ axelar.vald.source_url }}/{{ suffix_url }}"
     dest: "{{ vald_bin_dir }}/{{ service_identifier }}"
     owner: root
     group: root
@@ -19,6 +19,9 @@
     mode: "0755"
   notify:
     - Restart service
+
+- name: Include wasmvm task
+  ansible.builtin.include_tasks: configure_wasmvm.yml
 
 - name: Fetch secrets environment file from HCP Vault and save to file
   ansible.builtin.include_tasks: tasks/get_and_save_vault_secret.yml
