@@ -6,9 +6,11 @@ all:
   children:
     amplifier:
       hosts:
-        143.110.191.217:
+        amplifier_tofnd_host:
+          ansible_host: amplifier.axelar.mainnet.encapsulate.xyz
           type: tofnd
-        142.110.191.217:
+        amplifier_ampd_host:
+          ansible_host: amplifier.axelar.mainnet.encapsulate.xyz
           type: ampd
     axelar:
       hosts:
