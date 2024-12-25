@@ -7,10 +7,10 @@ all:
     amplifier:
       hosts:
         amplifier_tofnd_host:
-          ansible_host: amplifier.axelar.mainnet.encapsulate.xyz
+          ansible_host: amplifier.axelar.testnet.encapsulate.xyz
           type: tofnd
         amplifier_ampd_host:
-          ansible_host: amplifier.axelar.mainnet.encapsulate.xyz
+          ansible_host: amplifier.axelar.testnet.encapsulate.xyz
           type: ampd
     axelar:
       hosts:
