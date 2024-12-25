@@ -18,11 +18,11 @@ amplifier:
   tofnd:
     source_url: https://github.com/axelarnetwork/tofnd/releases/download
     ports:
-      default_port: 11451
+      default_port: 50051
   ampd:
     source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
     ports:
-      health_check_bind_addr: 11430
+      health_check_bind_addr: 3000
 
 wasmvm:
   source_url: https://github.com/CosmWasm/wasmvm/releases/download
