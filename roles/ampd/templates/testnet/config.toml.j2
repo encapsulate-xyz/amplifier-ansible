@@ -68,15 +68,13 @@ chain_finalization = "RPCFinalizedBlock"
 type = "EvmVerifierSetVerifier"
 
 [[handlers]]
-chain_name = "hedera"
-chain_rpc_url = "{{ vault.testnet.ampd.hedera.rpc_url }}"
+chain_name = "sui"
+chain_rpc_url = "{{ vault.testnet.ampd.sui.rpc_url }}"
 cosmwasm_contract = "axelar1ce9rcvw8htpwukc048z9kqmyk5zz52d5a7zqn9xlq2pg0mxul9mqxlx2cq"
-chain_finalization = "RPCFinalizedBlock"
-type = "EvmMsgVerifier"
+type = "SuiMsgVerifier"
 
 [[handlers]]
-chain_name = "hedera"
-chain_rpc_url = "{{ vault.testnet.ampd.hedera.rpc_url }}"
+chain_name = "sui"
+chain_rpc_url = "{{ vault.testnet.ampd.sui.rpc_url }}"
 cosmwasm_contract = "axelar1ce9rcvw8htpwukc048z9kqmyk5zz52d5a7zqn9xlq2pg0mxul9mqxlx2cq"
-chain_finalization = "RPCFinalizedBlock"
-type = "EvmVerifierSetVerifier"
+type = "SuiVerifierSetVerifier"
