@@ -14,7 +14,7 @@ ExecStart=/usr/bin/sh -c 'echo $KEYRING_PASSWORD | {{ vald_bin_dir }}/{{ service
     --node {{ axelar.vald.node_address }} \
     --tofnd-host {{ vald_tofnd_host }} \
     --tofnd-port {{ axelar.tofnd.ports.default_port }} \
-    --log_level debug --from {{ vald_tofnd_host }}'
+    --log_level debug --from {{ vald_broadcaster_address }}'
 Restart=always
 RestartSec=4
 LimitNOFILE=65536
