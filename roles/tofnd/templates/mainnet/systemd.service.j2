@@ -1,0 +1,18 @@
+[Unit]
+Description={{ service_identifier }}
+
+[Service]
+User={{ service_identifier }}
+Group={{ service_identifier }}
+WorkingDirectory={{ tofnd_home_dir }}
+EnvironmentFile={{ tofnd_environment_secrets_file_path }}
+ExecStart=/usr/bin/sh -c 'echo $KEYRING_PASSWORD | {{ tofnd_bin_dir }}/{{ service_identifier }} --port {{ vars[project].tofnd.ports.default_port }} --mnemonic existing --directory {{ tofnd_home_dir }}'
+Restart=always
+RestartSec=4
+LimitNOFILE=65536
+MemoryMax=64G
+StandardOutput=append:{{ tofnd_log_file_path }}
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target
