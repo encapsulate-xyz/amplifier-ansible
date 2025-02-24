@@ -5,14 +5,3 @@ amplifier:
     version: v0.10.1
   ampd:
     version: v1.4.0
-
-axelar:
-  vald:
-    version: v1.2.1
-    node_address: "tcp://validator.axelar.mainnet.encapsulate.xyz:11457"
-    validator_address: axelarvaloper1s0lankh33kprer2l22nank5rvsuh9ksa6utflp
-    chain_id: axelar-dojo-1
-    wasmvm:
-      version: v1.5.8
-  tofnd:
-    version: v0.10.1

@@ -26,11 +26,3 @@ amplifier:
 
 wasmvm:
   source_url: https://github.com/CosmWasm/wasmvm/releases/download
-
-axelar:
-  vald:
-    source_url: https://github.com/axelarnetwork/axelar-core/releases/download
-  tofnd:
-    source_url: https://github.com/axelarnetwork/tofnd/releases/download
-    ports:
-      default_port: 11450

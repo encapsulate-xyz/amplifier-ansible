@@ -5,14 +5,3 @@ amplifier:
     version: v1.0.1
   ampd:
     version: v1.4.0
-
-axelar:
-  vald:
-    version: v1.2.1
-    node_address: "tcp://validator.axelar.testnet.encapsulate.xyz:11457"
-    validator_address: axelarvaloper1klj7fs4d63krf2vpcts3wc5csadl9tdsfuz9mh
-    chain_id: axelar-testnet-lisbon-3
-    wasmvm:
-      version: v1.5.8
-  tofnd:
-    version: v1.0.1
