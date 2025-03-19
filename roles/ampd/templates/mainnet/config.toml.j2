@@ -1,0 +1,50 @@
+tm_jsonrpc = "{{ vault.mainnet.ampd.axelar.rpc_url }}"
+tm_grpc = "{{ vault.mainnet.ampd.axelar.grpc_url }}"
+event_buffer_cap = 100000
+health_check_bind_addr = "127.0.0.0:{{ amplifier.ampd.ports.health_check_bind_addr }}"
+[service_registry]
+cosmwasm_contract = "axelar1rpj2jjrv3vpugx9ake9kgk3s2kgwt0y60wtkmcgfml5m3et0mrls6nct9m"
+
+[broadcast]
+batch_gas_limit="20000000"
+broadcast_interval="1s"
+chain_id="axelar-dojo-1"
+gas_adjustment="2"
+gas_price="0.007uaxl"
+queue_cap="1000"
+tx_fetch_interval="1000ms"
+tx_fetch_max_retries="15"
+
+[tofnd_config]
+batch_gas_limit = "10000000"
+key_uid = "axelar"
+party_uid = "ampd"
+url = "http://127.0.0.1:{{ amplifier.tofnd.ports.default_port }}"
+
+[[handlers]]
+cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
+type="MultisigSigner"
+
+[[handlers]]
+chain_name="flow"
+chain_rpc_url = "{{ vault.mainnet.ampd.flow.rpc_url }}"
+cosmwasm_contract="axelar1kkqdsqvwq9a7p9fj0w89wpx2m2t0vrxl782aslhq0kdw2xxd2aesv3un04"
+chain_finalization="RPCFinalizedBlock"
+type="EvmMsgVerifier"
+
+[[handlers]]
+chain_name="flow"
+chain_rpc_url = "{{ vault.mainnet.ampd.flow.rpc_url }}"
+cosmwasm_contract="axelar1kkqdsqvwq9a7p9fj0w89wpx2m2t0vrxl782aslhq0kdw2xxd2aesv3un04"
+chain_finalization="RPCFinalizedBlock"
+type="EvmVerifierSetVerifier"
+
+[[handlers]]
+cosmwasm_contract="axelar1sykyha8kzf35kc5hplqk76kdufntjn6w45ntwlevwxp74dqr3rvsq7fazh"
+rpc_url="{{ vault.mainnet.ampd.sui.rpc_url }}"
+type="SuiMsgVerifier"
+
+[[handlers]]
+cosmwasm_contract="axelar1sykyha8kzf35kc5hplqk76kdufntjn6w45ntwlevwxp74dqr3rvsq7fazh"
+rpc_url="{{ vault.mainnet.ampd.sui.rpc_url }}"
+type="SuiVerifierSetVerifier"
