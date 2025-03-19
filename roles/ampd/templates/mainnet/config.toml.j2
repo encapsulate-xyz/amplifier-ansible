@@ -48,3 +48,13 @@ type="SuiMsgVerifier"
 cosmwasm_contract="axelar1sykyha8kzf35kc5hplqk76kdufntjn6w45ntwlevwxp74dqr3rvsq7fazh"
 rpc_url="{{ vault.mainnet.ampd.sui.rpc_url }}"
 type="SuiVerifierSetVerifier"
+
+[[handlers]]
+type="StellarMsgVerifier"
+cosmwasm_contract="axelar1dalnx2yvmu3g3aau8m7fj426fk9u8dnzlr5azvqmr4x82rtclats8lhjmu"
+rpc_url="{{ vault.mainnet.ampd.stellar.rpc_url }}"
+
+[[handlers]]
+type="StellarVerifierSetVerifier"
+cosmwasm_contract="axelar1dalnx2yvmu3g3aau8m7fj426fk9u8dnzlr5azvqmr4x82rtclats8lhjmu"
+rpc_url="{{ vault.mainnet.ampd.stellar.rpc_url }}"
