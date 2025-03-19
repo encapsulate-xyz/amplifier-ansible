@@ -92,3 +92,13 @@ chain_name="xrpl-evm"
 chain_rpc_url="{{ vault.testnet.ampd.xrpl.rpc_url }}"
 cosmwasm_contract="axelar1q8kn9t39ddpce42atk0d6wpdudr6djqxmz689m3nxy92ck0nnftqxfsuyk"
 type="EvmVerifierSetVerifier"
+
+[[handlers]]
+type="StellarMsgVerifier"
+cosmwasm_contract="axelar1j82crkl36gezwlch3ngkcyva9gjrqsz4vr76u3uvazdl7z70sfdsx30ma2"
+rpc_url="{{ vault.testnet.ampd.stellar.rpc_url }}"
+
+[[handlers]]
+type="StellarVerifierSetVerifier"
+cosmwasm_contract="axelar1j82crkl36gezwlch3ngkcyva9gjrqsz4vr76u3uvazdl7z70sfdsx30ma2"
+rpc_url="{{ vault.testnet.ampd.stellar.rpc_url }}"
