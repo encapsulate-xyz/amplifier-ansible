@@ -22,9 +22,8 @@ party_uid = "ampd"
 url = "http://127.0.0.1:{{ amplifier.tofnd.ports.default_port }}"
 
 [[handlers]]
-chain_name="test-sepolia"
-cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
-type="MultisigSigner"
+cosmwasm_contract = "axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
+type = "MultisigSigner"
 
 [[handlers]]
 chain_name = "test-sepolia"
@@ -60,11 +59,6 @@ chain_finalization = "ConfirmationHeight"
 type = "EvmVerifierSetVerifier"
 
 [[handlers]]
-chain_name="flow"
-cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
-type="MultisigSigner"
-
-[[handlers]]
 chain_name = "flow"
 chain_rpc_url = "{{ vault.testnet.ampd.flow.rpc_url }}"
 cosmwasm_contract = "axelar1kkqdsqvwq9a7p9fj0w89wpx2m2t0vrxl782aslhq0kdw2xxd2aesv3un04"
@@ -79,11 +73,6 @@ chain_finalization = "RPCFinalizedBlock"
 type = "EvmVerifierSetVerifier"
 
 [[handlers]]
-chain_name="sui"
-cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
-type="MultisigSigner"
-
-[[handlers]]
 chain_name = "sui"
 rpc_url = "{{ vault.testnet.ampd.sui.rpc_url }}"
 cosmwasm_contract = "axelar1sykyha8kzf35kc5hplqk76kdufntjn6w45ntwlevwxp74dqr3rvsq7fazh"
@@ -95,12 +84,6 @@ rpc_url = "{{ vault.testnet.ampd.sui.rpc_url }}"
 cosmwasm_contract = "axelar1sykyha8kzf35kc5hplqk76kdufntjn6w45ntwlevwxp74dqr3rvsq7fazh"
 type = "SuiVerifierSetVerifier"
 
-
-[[handlers]]
-chain_name="stellar"
-cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
-type="MultisigSigner"
-
 [[handlers]]
 type="StellarMsgVerifier"
 cosmwasm_contract="axelar1j82crkl36gezwlch3ngkcyva9gjrqsz4vr76u3uvazdl7z70sfdsx30ma2"
@@ -110,11 +93,6 @@ rpc_url="{{ vault.testnet.ampd.stellar.rpc_url }}"
 type="StellarVerifierSetVerifier"
 cosmwasm_contract="axelar1j82crkl36gezwlch3ngkcyva9gjrqsz4vr76u3uvazdl7z70sfdsx30ma2"
 rpc_url="{{ vault.testnet.ampd.stellar.rpc_url }}"
-
-[[handlers]]
-chain_name="xrpl"
-cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
-type="MultisigSigner"
 
 [[handlers]]
 type="XRPLMsgVerifier"
