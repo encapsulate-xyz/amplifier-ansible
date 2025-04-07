@@ -22,6 +22,11 @@ party_uid = "ampd"
 url = "http://127.0.0.1:{{ amplifier.tofnd.ports.default_port }}"
 
 [[handlers]]
+chain_name="test-sepolia"
+cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
+type="MultisigSigner"
+
+[[handlers]]
 chain_name = "test-sepolia"
 chain_rpc_url = "{{ vault.testnet.ampd.eth.rpc_url }}"
 cosmwasm_contract = "axelar1r4rmvn83vrfj4evy5l8cv2nat2v0whm36ds3crn2mhlq8ufmhvts9467zz"
@@ -34,6 +39,11 @@ chain_rpc_url = "{{ vault.testnet.ampd.eth.rpc_url }}"
 cosmwasm_contract = "axelar1r4rmvn83vrfj4evy5l8cv2nat2v0whm36ds3crn2mhlq8ufmhvts9467zz"
 chain_finalization = "RPCFinalizedBlock"
 type = "EvmVerifierSetVerifier"
+
+[[handlers]]
+chain_name="test-avalanche"
+cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
+type="MultisigSigner"
 
 [[handlers]]
 chain_name = "test-avalanche"
