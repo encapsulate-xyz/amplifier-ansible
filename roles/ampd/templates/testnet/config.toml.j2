@@ -59,6 +59,8 @@ cosmwasm_contract = "axelar1hupk5du59cgu4ps5s637rhakwsq0060ycdp57j2ccevna7wqqzrq
 chain_finalization = "ConfirmationHeight"
 type = "EvmVerifierSetVerifier"
 
+# FLOW
+
 [[handlers]]
 chain_name="flow"
 cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
@@ -78,6 +80,8 @@ cosmwasm_contract = "axelar1kkqdsqvwq9a7p9fj0w89wpx2m2t0vrxl782aslhq0kdw2xxd2aes
 chain_finalization = "RPCFinalizedBlock"
 type = "EvmVerifierSetVerifier"
 
+# SUI
+
 [[handlers]]
 chain_name="sui"
 cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
@@ -95,6 +99,9 @@ rpc_url = "{{ vault.testnet.ampd.sui.rpc_url }}"
 cosmwasm_contract = "axelar1sykyha8kzf35kc5hplqk76kdufntjn6w45ntwlevwxp74dqr3rvsq7fazh"
 type = "SuiVerifierSetVerifier"
 
+
+# STELLAR
+
 [[handlers]]
 chain_name="stellar-2025-q1"
 cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
@@ -102,13 +109,15 @@ type="MultisigSigner"
 
 [[handlers]]
 type="StellarMsgVerifier"
-cosmwasm_contract="axelar1j82crkl36gezwlch3ngkcyva9gjrqsz4vr76u3uvazdl7z70sfdsx30ma2"
+cosmwasm_contract="axelar1a4wt84rllhuwpdvymj4tql6cugfsmdmau9ufmzcm329yx9st96eqx05uam"
 rpc_url="{{ vault.testnet.ampd.stellar.rpc_url }}"
 
 [[handlers]]
 type="StellarVerifierSetVerifier"
-cosmwasm_contract="axelar1j82crkl36gezwlch3ngkcyva9gjrqsz4vr76u3uvazdl7z70sfdsx30ma2"
+cosmwasm_contract="axelar1a4wt84rllhuwpdvymj4tql6cugfsmdmau9ufmzcm329yx9st96eqx05uam"
 rpc_url="{{ vault.testnet.ampd.stellar.rpc_url }}"
+
+# XRPL
 
 [[handlers]]
 type="XRPLMsgVerifier"
@@ -120,6 +129,8 @@ cosmwasm_contract="axelar1pnynr6wnmchutkv6490mdqqxkz54fnrtmq8krqhvglhsqhmu7wzsnc
 type="XRPLMultisigSigner"
 multisig_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
 multisig_prover_contract="axelar1k82qfzu3l6rvc7twlp9lpwsnav507czl6xyrk0xv287t4439ymvsl6n470"
+
+# XRPL EVM
 
 [[handlers]]
 chain_name="xrpl-evm"
