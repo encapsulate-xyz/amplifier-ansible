@@ -12,3 +12,4 @@ all:
         amplifier_ampd_host:
           ansible_host: amplifier.axelar.testnet.encapsulate.xyz
           type: ampd
+        amplifier.axelar.mainnet.encapsulate.xyz:
