@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# Set variables
+ADDRESS="{{ amplifier.address }}"
+PUSHGATEWAY_URL="http://{{ monitor_server_dns }}:{{ pushgateway_port }}"
+JOB_NAME="chain_exporter"
+
+log() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] $1"
+}
+
+log "Fetching amplifier vote data"
+vote_response=$(curl -s -X POST https://api.axelarscan.io/validator/searchVMPolls \
+  -H "Content-Type: application/json" \
+  -d '{
+    "voter": "'"$ADDRESS"'",
+    "size": 200,
+    "sort": [
+      {
+        "created_at.ms": "desc"
+      }
+    ]
+}')
+
+if [ $? -eq 0 ] && [ -n "$vote_response" ]; then
+  log "Successfully fetched amplifier vote data"
+else
+  log "Failed to fetch amplifier vote data"
+  exit 1
+fi
+
+# Process vote percentage by chain
+log "Processing vote percentages by chain"
+metrics=""
+mapfile -t lines < <(echo "$vote_response" | jq -r --arg addr "$ADDRESS" '
+  .data[] 
+  | {chain: .sender_chain, vote: .[$addr].vote}
+' | jq -s '
+  group_by(.chain) 
+  | map({
+      chain: .[0].chain,
+      total: length,
+      voting_status: map(select(.vote == true)) | length
+    }) 
+' | jq -r '.[] | "\(.chain) \(.voting_status) \(.total)"')
+
+for line in "${lines[@]}"; do
+  chain=$(echo "$line" | awk '{print $1}')
+  voting_status=$(echo "$line" | awk '{print $2}')
+  total_votes=$(echo "$line" | awk '{print $3}')
+  percent=$(awk "BEGIN {printf \"%.2f\", ($voting_status / $total_votes) * 100}")
+
+  # Add to metrics
+  metrics+=$'amplifier_evm_chain_vote_percent{'
+  metrics+="chain=\"$chain\""
+  metrics+="} $percent"$'\n'
+done
+
+# Push metrics to Pushgateway
+log "Pushing vote metrics to Pushgateway"
+cat <<EOF | curl --max-time 30 --data-binary @- "$PUSHGATEWAY_URL/metrics/job/$JOB_NAME/project/{{ project }}/env/{{ env }}"
+# TYPE amplifier_evm_chain_vote_percent gauge
+$metrics
+EOF
+
+log "Successfully pushed to Pushgateway"
