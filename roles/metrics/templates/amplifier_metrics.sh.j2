@@ -10,7 +10,7 @@ log() {
 }
 
 log "Fetching amplifier vote data"
-vote_response=$(curl -s -X POST https://api.axelarscan.io/validator/searchVMPolls \
+vote_response=$(curl -s -X POST {{ amplifier.ampd.vote_metrics_url }} \
   -H "Content-Type: application/json" \
   -d '{
     "voter": "'"$ADDRESS"'",
