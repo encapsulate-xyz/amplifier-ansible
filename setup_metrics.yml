@@ -1,0 +1,23 @@
+---
+- name: Set up Metrics
+  hosts: all
+  become: true
+  gather_facts: true
+  vars:
+    project: "{{ group_names[0] }}"
+  vars_files:
+    - group_vars/all.yml
+    - group_vars/{{ env }}.yml
+
+  tasks:
+    - name: Set service_identifier
+      ansible.builtin.set_fact:
+        service_identifier: "{{ project }}-metrics"
+
+    - name: Include common handlers
+      ansible.builtin.include_role:
+        name: common
+
+    - name: Include metrics role
+      ansible.builtin.include_role:
+        name: metrics

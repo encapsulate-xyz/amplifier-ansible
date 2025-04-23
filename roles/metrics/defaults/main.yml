@@ -1,0 +1,15 @@
+---
+# maintains directories and paths
+metrics_home_dir: /opt/{{ service_identifier }}
+
+metrics_bin_dir: "{{ metrics_home_dir }}/bin"
+metrics_log_dir: "{{ metrics_home_dir }}/log"
+
+metrics_directories:
+  - "{{ metrics_home_dir }}"
+  - "{{ metrics_bin_dir }}"
+  - "{{ metrics_log_dir }}"
+
+metrics_log_file_path: "{{ metrics_log_dir }}/{{ service_identifier }}.log"
+
+metrics_script_file_path: "{{ metrics_bin_dir }}/{{ metrics_script_file_name }}"

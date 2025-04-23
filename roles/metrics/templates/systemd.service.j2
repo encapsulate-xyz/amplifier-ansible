@@ -1,0 +1,16 @@
+[Unit]
+Description=Amplifier Vote Metrics
+
+[Service]
+Type=oneshot
+User={{ service_identifier }}
+Group={{ service_identifier }}
+WorkingDirectory={{ metrics_home_dir }}
+ExecStart=/bin/bash -c '{{ metrics_script_file_path }} 2>/dev/null'
+LimitNOFILE=65536
+MemoryMax=64G
+StandardOutput=append:{{ metrics_log_file_path }}
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target
