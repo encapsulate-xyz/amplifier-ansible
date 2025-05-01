@@ -21,9 +21,12 @@ key_uid = "axelar"
 party_uid = "ampd"
 url = "http://127.0.0.1:{{ amplifier.tofnd.ports.default_port }}"
 
+# FLOW
+
 [[handlers]]
-cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
-type="MultisigSigner"
+chain_name = 'flow'
+cosmwasm_contract = 'axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5'
+type = 'MultisigSigner'
 
 [[handlers]]
 chain_name="flow"
@@ -39,6 +42,13 @@ cosmwasm_contract="axelar1kkqdsqvwq9a7p9fj0w89wpx2m2t0vrxl782aslhq0kdw2xxd2aesv3
 chain_finalization="RPCFinalizedBlock"
 type="EvmVerifierSetVerifier"
 
+# SUI
+
+[[handlers]]
+chain_name = 'sui'
+cosmwasm_contract = 'axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5'
+type = 'MultisigSigner'
+
 [[handlers]]
 cosmwasm_contract="axelar1sykyha8kzf35kc5hplqk76kdufntjn6w45ntwlevwxp74dqr3rvsq7fazh"
 rpc_url="{{ vault.mainnet.ampd.sui.rpc_url }}"
@@ -49,6 +59,13 @@ cosmwasm_contract="axelar1sykyha8kzf35kc5hplqk76kdufntjn6w45ntwlevwxp74dqr3rvsq7
 rpc_url="{{ vault.mainnet.ampd.sui.rpc_url }}"
 type="SuiVerifierSetVerifier"
 
+# STELLAR
+
+[[handlers]]
+chain_name = 'stellar'
+cosmwasm_contract = 'axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5'
+type = 'MultisigSigner'
+
 [[handlers]]
 type="StellarMsgVerifier"
 cosmwasm_contract="axelar1dalnx2yvmu3g3aau8m7fj426fk9u8dnzlr5azvqmr4x82rtclats8lhjmu"
@@ -58,3 +75,16 @@ rpc_url="{{ vault.mainnet.ampd.stellar.rpc_url }}"
 type="StellarVerifierSetVerifier"
 cosmwasm_contract="axelar1dalnx2yvmu3g3aau8m7fj426fk9u8dnzlr5azvqmr4x82rtclats8lhjmu"
 rpc_url="{{ vault.mainnet.ampd.stellar.rpc_url }}"
+
+# XRPL
+
+[[handlers]]
+type="XRPLMsgVerifier"
+chain_name="xrpl"
+chain_rpc_url="{{ vault.mainnet.ampd.xrpl.rpc_url }}"
+cosmwasm_contract="axelar1lppu77d7h4u7jylw9afctsc2908ea0eh3q6ap82fep5s2qjk9axqvd3sjx"
+
+[[handlers]]
+type="XRPLMultisigSigner"
+multisig_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
+multisig_prover_contract="axelar12k57j826jl8xldyl2hf9hnc9gwf72zl48xfq4qn20sl4kl8unrxsejqvm8"
