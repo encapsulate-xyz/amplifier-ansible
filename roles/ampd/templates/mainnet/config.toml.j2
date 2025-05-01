@@ -21,11 +21,12 @@ key_uid = "axelar"
 party_uid = "ampd"
 url = "http://127.0.0.1:{{ amplifier.tofnd.ports.default_port }}"
 
-[[handlers]]
-cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
-type="MultisigSigner"
-
 # FLOW
+
+[[handlers]]
+chain_name = 'flow'
+cosmwasm_contract = 'axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5'
+type = 'MultisigSigner'
 
 [[handlers]]
 chain_name="flow"
@@ -44,6 +45,11 @@ type="EvmVerifierSetVerifier"
 # SUI
 
 [[handlers]]
+chain_name = 'sui'
+cosmwasm_contract = 'axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5'
+type = 'MultisigSigner'
+
+[[handlers]]
 cosmwasm_contract="axelar1sykyha8kzf35kc5hplqk76kdufntjn6w45ntwlevwxp74dqr3rvsq7fazh"
 rpc_url="{{ vault.mainnet.ampd.sui.rpc_url }}"
 type="SuiMsgVerifier"
@@ -54,6 +60,11 @@ rpc_url="{{ vault.mainnet.ampd.sui.rpc_url }}"
 type="SuiVerifierSetVerifier"
 
 # STELLAR
+
+[[handlers]]
+chain_name = 'stellar'
+cosmwasm_contract = 'axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5'
+type = 'MultisigSigner'
 
 [[handlers]]
 type="StellarMsgVerifier"
