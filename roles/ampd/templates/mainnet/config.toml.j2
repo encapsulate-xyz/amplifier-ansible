@@ -88,3 +88,24 @@ cosmwasm_contract="axelar1lppu77d7h4u7jylw9afctsc2908ea0eh3q6ap82fep5s2qjk9axqvd
 type="XRPLMultisigSigner"
 multisig_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
 multisig_prover_contract="axelar12k57j826jl8xldyl2hf9hnc9gwf72zl48xfq4qn20sl4kl8unrxsejqvm8"
+
+# XRPL-EVM
+
+[[handlers]]
+chain_name = 'xrpl-evm'
+cosmwasm_contract = 'axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5'
+type = 'MultisigSigner'
+
+[[handlers]]
+chain_finalization="RPCFinalizedBlock"
+chain_name="xrpl-evm"
+chain_rpc_url="{{ vault.mainnet.ampd.xrpl_evm.rpc_url }}"
+cosmwasm_contract="axelar1q8kn9t39ddpce42atk0d6wpdudr6djqxmz689m3nxy92ck0nnftqxfsuyk"
+type="EvmMsgVerifier"
+
+[[handlers]]
+chain_finalization="RPCFinalizedBlock"
+chain_name="xrpl-evm"
+chain_rpc_url="{{ vault.mainnet.ampd.xrpl_evm.rpc_url }}"
+cosmwasm_contract="axelar1q8kn9t39ddpce42atk0d6wpdudr6djqxmz689m3nxy92ck0nnftqxfsuyk"
+type="EvmVerifierSetVerifier"
