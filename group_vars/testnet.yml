@@ -4,6 +4,6 @@ amplifier:
   tofnd:
     version: v1.0.1
   ampd:
-    version: v1.7.0
+    version: v1.8.0
     vote_metrics_url: https://testnet.api.axelarscan.io/validator/searchVMPolls
   address: axelar1gc40fw08ee4vamhvtgcszladfsrd8tyhc75l3j

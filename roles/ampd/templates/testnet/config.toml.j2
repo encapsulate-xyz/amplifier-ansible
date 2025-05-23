@@ -21,6 +21,21 @@ key_uid = "axelar"
 party_uid = "ampd"
 url = "http://127.0.0.1:{{ amplifier.tofnd.ports.default_port }}"
 
+[grpc]
+ip_addr = '127.0.0.1'
+port = {{ amplifier.ampd.ports.grpc_port }}
+global_concurrency_limit = 1024
+concurrency_limit_per_connection = 32
+request_timeout = '30s'
+
+[tm_grpc_timeout]
+nanos="0"
+secs="5"
+
+[tofnd_config.timeout]
+nanos="0"
+secs="3"
+
 [[handlers]]
 chain_name="test-sepolia"
 cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
@@ -120,15 +135,15 @@ rpc_url="{{ vault.testnet.ampd.stellar.rpc_url }}"
 # XRPL
 
 [[handlers]]
-type="XRPLMsgVerifier"
 chain_name="xrpl"
-chain_rpc_url="{{ vault.testnet.ampd.xrpl.rpc_url }}"
+chain_rpc_url="https://s.altnet.rippletest.net:51234"
 cosmwasm_contract="axelar1pnynr6wnmchutkv6490mdqqxkz54fnrtmq8krqhvglhsqhmu7wzsnc86sy"
+type="XRPLMsgVerifier"
 
 [[handlers]]
+chain_name="xrpl"
+cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
 type="XRPLMultisigSigner"
-multisig_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
-multisig_prover_contract="axelar1k82qfzu3l6rvc7twlp9lpwsnav507czl6xyrk0xv287t4439ymvsl6n470"
 
 # XRPL EVM
 
