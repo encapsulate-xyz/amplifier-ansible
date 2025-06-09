@@ -165,3 +165,35 @@ chain_name="xrpl-evm"
 chain_rpc_url="{{ vault.testnet.ampd.xrpl_evm.rpc_url }}"
 cosmwasm_contract="axelar1q8kn9t39ddpce42atk0d6wpdudr6djqxmz689m3nxy92ck0nnftqxfsuyk"
 type="EvmVerifierSetVerifier"
+
+# Hyperliquid
+ 
+[[handlers]]
+type="EvmMsgVerifier"
+chain_name="hyperliquid"
+chain_finalization="RPCFinalizedBlock"
+chain_rpc_url=""{{ vault.testnet.ampd.hyperliquid.rpc_url }}""
+cosmwasm_contract="axelar1n64vk7l3zagh2eadkuhl7602lxluu86dn9smfxyp7c2e4v8pqj5sv4ypjr"
+
+[[handlers]]
+type="EvmVerifierSetVerifier"
+chain_name="hyperliquid"
+chain_finalization="RPCFinalizedBlock"
+chain_rpc_url=""{{ vault.testnet.ampd.hyperliquid.rpc_url }}""
+cosmwasm_contract="axelar1n64vk7l3zagh2eadkuhl7602lxluu86dn9smfxyp7c2e4v8pqj5sv4ypjr"
+
+# Plume
+
+[[handlers]]
+type="EvmMsgVerifier"
+chain_name="plume"
+chain_finalization="RPCFinalizedBlock"
+chain_rpc_url=""{{ vault.testnet.ampd.plume.rpc_url }}""
+cosmwasm_contract="axelar1nrdqke6tcxjuymg5gyd9x3yg35n3wrgarnj3sqskp98z2xnvlx9q82f63t"
+
+[[handlers]]
+type="EvmVerifierSetVerifier"
+chain_name="plume"
+chain_finalization="RPCFinalizedBlock"
+chain_rpc_url=""{{ vault.testnet.ampd.plume.rpc_url }}""
+cosmwasm_contract="axelar1nrdqke6tcxjuymg5gyd9x3yg35n3wrgarnj3sqskp98z2xnvlx9q82f63t"
