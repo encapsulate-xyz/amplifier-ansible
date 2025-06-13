@@ -197,3 +197,24 @@ chain_name="plume"
 chain_finalization="RPCFinalizedBlock"
 chain_rpc_url="{{ vault.testnet.ampd.plume.rpc_url }}"
 cosmwasm_contract="axelar1nrdqke6tcxjuymg5gyd9x3yg35n3wrgarnj3sqskp98z2xnvlx9q82f63t"
+
+# Berachain
+
+[[handlers]]
+type="MultisigSigner"
+chain_name="berachain"
+cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
+
+[[handlers]]
+type="EvmMsgVerifier"
+chain_finalization="RPCFinalizedBlock"
+chain_name="berachain"
+chain_rpc_url="{{ vault.testnet.ampd.berachain.rpc_url }}"
+cosmwasm_contract="axelar1xx6xdw6mwmfl6u2jygq0zfx2q6uyc8emtt29j9wg78l2l4p739nqmwsgal"
+
+[[handlers]]
+type="EvmVerifierSetVerifier"
+chain_finalization="RPCFinalizedBlock"
+chain_name="berachain"
+chain_rpc_url="{{ vault.testnet.ampd.berachain.rpc_url }}"
+cosmwasm_contract="axelar1xx6xdw6mwmfl6u2jygq0zfx2q6uyc8emtt29j9wg78l2l4p739nqmwsgal"
