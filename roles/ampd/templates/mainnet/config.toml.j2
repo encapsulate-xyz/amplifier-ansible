@@ -145,3 +145,45 @@ chain_name="plume"
 chain_rpc_url="{{ vault.mainnet.ampd.plume.rpc_url }}"
 cosmwasm_contract="axelar1nrdqke6tcxjuymg5gyd9x3yg35n3wrgarnj3sqskp98z2xnvlx9q82f63t"
 type="EvmVerifierSetVerifier"
+
+# Berachain
+
+[[handlers]]
+type="MultisigSigner"
+chain_name="berachain"
+cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
+
+[[handlers]]
+type="EvmMsgVerifier"
+chain_finalization="RPCFinalizedBlock"
+chain_name="berachain"
+chain_rpc_url="{{ vault.mainnet.ampd.berachain.rpc_url }}"
+cosmwasm_contract="axelar1xx6xdw6mwmfl6u2jygq0zfx2q6uyc8emtt29j9wg78l2l4p739nqmwsgal"
+
+[[handlers]]
+type="EvmVerifierSetVerifier"
+chain_finalization="RPCFinalizedBlock"
+chain_name="berachain"
+chain_rpc_url="{{ vault.mainnet.ampd.berachain.rpc_url }}"
+cosmwasm_contract="axelar1xx6xdw6mwmfl6u2jygq0zfx2q6uyc8emtt29j9wg78l2l4p739nqmwsgal"
+
+# Hedera
+
+[[handlers]]
+type="MultisigSigner"
+chain_name="hedera"
+cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
+
+[[handlers]]
+type="EvmMsgVerifier"
+cosmwasm_contract="axelar1q8q8qq59yv9wmhcreu5ykt4azsk83ttve4e7jyavt32k6jq862xsqexnfh"
+chain_name="hedera"
+chain_rpc_url="{{ vault.mainnet.ampd.hedera.rpc_url }}"
+chain_finalization="RPCFinalizedBlock"
+
+[[handlers]]
+type="EvmVerifierSetVerifier"
+cosmwasm_contract="axelar1q8q8qq59yv9wmhcreu5ykt4azsk83ttve4e7jyavt32k6jq862xsqexnfh"
+chain_name="hedera"
+chain_rpc_url="{{ vault.mainnet.ampd.hedera.rpc_url }}"
+chain_finalization="RPCFinalizedBlock"
