@@ -187,3 +187,24 @@ cosmwasm_contract="axelar1q8q8qq59yv9wmhcreu5ykt4azsk83ttve4e7jyavt32k6jq862xsqe
 chain_name="hedera"
 chain_rpc_url="{{ vault.mainnet.ampd.hedera.rpc_url }}"
 chain_finalization="RPCFinalizedBlock"
+
+# Hyperliquid
+
+[[handlers]]
+type="MultisigSigner"
+chain_name="hyperliquid"
+cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
+
+[[handlers]]
+type="EvmMsgVerifier"
+chain_name="hyperliquid"
+chain_finalization="RPCFinalizedBlock"
+chain_rpc_url="{{ vault.mainnet.ampd.hyperliquid.rpc_url }}"
+cosmwasm_contract="axelar1n64vk7l3zagh2eadkuhl7602lxluu86dn9smfxyp7c2e4v8pqj5sv4ypjr"
+
+[[handlers]]
+type="EvmVerifierSetVerifier"
+chain_name="hyperliquid"
+chain_finalization="RPCFinalizedBlock"
+chain_rpc_url="{{ vault.mainnet.ampd.hyperliquid.rpc_url }}"
+cosmwasm_contract="axelar1n64vk7l3zagh2eadkuhl7602lxluu86dn9smfxyp7c2e4v8pqj5sv4ypjr"
