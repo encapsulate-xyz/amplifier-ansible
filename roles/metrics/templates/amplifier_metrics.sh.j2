@@ -58,7 +58,7 @@ done
 
 # Push metrics to Pushgateway
 log "Pushing vote metrics to Pushgateway"
-cat <<EOF | curl --max-time 30 --data-binary @- "$PUSHGATEWAY_URL/metrics/job/$JOB_NAME/project/{{ project }}/env/{{ env }}"
+cat <<EOF | curl --max-time 30 --data-binary @- "$PUSHGATEWAY_URL/metrics/job/$JOB_NAME/project/{{ project }}/env/{{ env }}/type/{{ type }}"
 # TYPE amplifier_evm_chain_vote_percent gauge
 $metrics
 EOF
