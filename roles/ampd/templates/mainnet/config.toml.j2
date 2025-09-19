@@ -208,3 +208,22 @@ chain_name="hyperliquid"
 chain_finalization="RPCFinalizedBlock"
 chain_rpc_url="{{ vault.mainnet.ampd.hyperliquid.rpc_url }}"
 cosmwasm_contract="axelar1n64vk7l3zagh2eadkuhl7602lxluu86dn9smfxyp7c2e4v8pqj5sv4ypjr"
+
+# Monad
+
+[[handlers]]
+type="EvmMsgVerifier"
+chain_name="monad"
+cosmwasm_contract="axelar1u080xgqqu9zhl4e9hf2ktdny4pq6kc2pmh6u6mlv8nw5zjvcetvqqjzeu0"
+chain_rpc_url="{{ vault.mainnet.ampd.monad.rpc_url }}"
+
+[[handlers]]
+type="EvmVerifierSetVerifier"
+chain_name="monad"
+cosmwasm_contract="axelar1u080xgqqu9zhl4e9hf2ktdny4pq6kc2pmh6u6mlv8nw5zjvcetvqqjzeu0"
+chain_rpc_url="{{ vault.mainnet.ampd.monad.rpc_url }}"
+
+[[handlers]]
+type = 'MultisigSigner'
+chain_name = 'monad'
+cosmwasm_contract = 'axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5'
