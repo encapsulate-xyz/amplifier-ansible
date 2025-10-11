@@ -2,6 +2,7 @@ tm_jsonrpc = "{{ vault.mainnet.ampd.axelar.rpc_url }}"
 tm_grpc = "{{ vault.mainnet.ampd.axelar.grpc_url }}"
 event_buffer_cap = 100000
 health_check_bind_addr = "127.0.0.0:{{ amplifier.ampd.ports.health_check_bind_addr }}"
+
 [service_registry]
 cosmwasm_contract = "axelar1rpj2jjrv3vpugx9ake9kgk3s2kgwt0y60wtkmcgfml5m3et0mrls6nct9m"
 
@@ -14,6 +15,8 @@ gas_price="0.007uaxl"
 queue_cap="1000"
 tx_fetch_interval="1000ms"
 tx_fetch_max_retries="15"
+tx_confirmation_buffer_size="10"
+tx_confirmation_queue_cap="1000"
 
 [tofnd_config]
 batch_gas_limit = "10000000"
@@ -27,6 +30,7 @@ port = {{ amplifier.ampd.ports.grpc_port }}
 global_concurrency_limit = 1024
 concurrency_limit_per_connection = 32
 request_timeout = '30s'
+blockchain_service.chains=[]
 
 [tm_grpc_timeout]
 nanos="0"
