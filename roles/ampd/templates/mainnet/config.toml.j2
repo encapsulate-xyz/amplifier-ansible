@@ -1,5 +1,6 @@
 tm_jsonrpc = "{{ vault.mainnet.ampd.axelar.rpc_url }}"
 tm_grpc = "{{ vault.mainnet.ampd.axelar.grpc_url }}"
+tm_grpc_timeout="5s"
 event_buffer_cap = 100000
 health_check_bind_addr = "127.0.0.0:{{ amplifier.ampd.ports.health_check_bind_addr }}"
 
@@ -23,6 +24,7 @@ batch_gas_limit = "10000000"
 key_uid = "axelar"
 party_uid = "ampd"
 url = "http://127.0.0.1:{{ amplifier.tofnd.ports.default_port }}"
+timeout="3s"
 
 [grpc]
 ip_addr = '127.0.0.1'
@@ -31,14 +33,6 @@ global_concurrency_limit = 1024
 concurrency_limit_per_connection = 32
 request_timeout = '30s'
 blockchain_service.chains=[]
-
-[tm_grpc_timeout]
-nanos="0"
-secs="5"
-
-[tofnd_config.timeout]
-nanos="0"
-secs="3"
 
 # FLOW
 
