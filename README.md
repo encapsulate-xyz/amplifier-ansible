@@ -30,7 +30,7 @@ This playbook relies on HashiCorp Vault to securely retrieve sensitive files, su
 The playbook dynamically retrieves Keyring passwords from HashiCorp Vault. The keys are expected to follow a structured path format:
 `<environment>/<project>/<organization>/<type>/<file_name>`
 For example:
-`testnet/axelar/encapsulate/tofnd/axelar-tofnd-secrets.env`
+- [`testnet/axelar/encapsulate/tofnd/axelar-tofnd-secrets.env`](roles/tofnd/templates/secrets.env.example)
 
 This structure ensures easy organization and secure retrieval of secrets.
 
