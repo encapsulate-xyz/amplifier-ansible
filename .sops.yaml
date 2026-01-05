@@ -1,0 +1,3 @@
+creation_rules:
+  - path_regex: (^|/)vault\.yml$
+    age: 'age18axypndgd8p4zhglj5ew38tw0mufx2q75mlnjmevsvmgsmreqf7qe5589w'

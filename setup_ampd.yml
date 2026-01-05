@@ -7,9 +7,13 @@
     allowed_node_types: [ampd]
   vars_files:
     - group_vars/all.yml
-    - group_vars/vault.yml
-    - group_vars/{{ env }}.yml
   pre_tasks:
+    - name: Load environment variables
+      ansible.builtin.include_vars:
+        file: "group_vars/{{ env }}.yml"
+    - name: Load vault variables
+      community.sops.load_vars:
+        file: group_vars/vault.yml
     - name: Include environment setup tasks
       when: type in allowed_node_types
       ansible.builtin.include_tasks: tasks/setup_environment.yml
