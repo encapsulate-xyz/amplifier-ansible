@@ -20,12 +20,15 @@
   notify:
     - Restart service
 
-- name: Fetch secrets environment file from HCP Vault and save to file
-  ansible.builtin.include_tasks: tasks/get_and_save_vault_secret.yml
-  vars:
-    vault_secret_source_path: "{{ project }}/{{ org }}/{{ type }}/{{ tofnd_environment_secrets_file_name }}"
-    secret_destination_path: "{{ tofnd_environment_secrets_file_path }}"
-    secret_type: environment
+- name: Fetch secrets from HCP Vault and save to files
+  when: fetch_vault_secrets | default(false) | bool
+  block:
+    - name: Fetch secrets environment file from HCP Vault and save to file
+      ansible.builtin.include_tasks: tasks/get_and_save_vault_secret.yml
+      vars:
+        vault_secret_source_path: "{{ project }}/{{ org }}/{{ type }}/{{ tofnd_environment_secrets_file_name }}"
+        secret_destination_path: "{{ tofnd_environment_secrets_file_path }}"
+        secret_type: environment
 
 - name: Copy systemd service file
   ansible.builtin.template:

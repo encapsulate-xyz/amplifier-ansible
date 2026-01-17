@@ -13,3 +13,7 @@ all:
           ansible_host: amplifier.axelar.mainnet.encapsulate.xyz
           type: ampd
         amplifier.axelar.mainnet.encapsulate.xyz:
+        ts.tofnd.amplifier.axelar.mainnet.encapsulate.xyz:
+          type: tofnd
+        ts.amplifier.axelar.mainnet.encapsulate.xyz:
+          type: ampd
