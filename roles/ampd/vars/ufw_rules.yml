@@ -1,0 +1,7 @@
+---
+ampd_ufw_rules:
+  - port: "{{ amplifier.ampd.ports.monitoring_server_bind_addr }}"
+    proto: tcp
+    rule: allow
+    from: "{{ monitor_server_dns }}"
+    comment: ampd_monitoring_port
