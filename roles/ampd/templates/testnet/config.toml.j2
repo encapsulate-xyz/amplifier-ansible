@@ -34,6 +34,10 @@ concurrency_limit_per_connection = 32
 request_timeout = '30s'
 blockchain_service.chains=[]
 
+[monitoring_server]
+enabled = true
+bind_address = "0.0.0.0:{{ amplifier.ampd.ports.monitoring_server_bind_addr }}"
+
 [[handlers]]
 chain_name="test-sepolia"
 cosmwasm_contract="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
