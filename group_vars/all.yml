@@ -25,6 +25,7 @@ amplifier:
     ports:
       health_check_bind_addr: 3000
       grpc_port: 9090
+      monitoring_server_bind_addr: 3001
 
 wasmvm:
   source_url: https://github.com/CosmWasm/wasmvm/releases/download
