@@ -3,8 +3,8 @@
 
 org: encapsulate
 domain_regex: ^([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$
-monitor_server_dns: monitor.encapsulate.xyz
-pushgateway_dns: pushgateway.encapsulate.xyz
+monitor_server_dns: h1-finland-hub-monitor.crane-goldeye.ts.net
+pushgateway_dns: h1-finland-hub-monitor.crane-goldeye.ts.net/pushgateway
 ansible_port: 8192
 
 architecture_map:
