@@ -17,3 +17,7 @@ all:
           type: tofnd
         ts.amplifier.axelar.mainnet.encapsulate.xyz:
           type: ampd
+        new.tofnd.amplifier.axelar.mainnet.encapsulate.xyz:
+          type: tofnd
+        new.amplifier.axelar.mainnet.encapsulate.xyz:
+          type: ampd
