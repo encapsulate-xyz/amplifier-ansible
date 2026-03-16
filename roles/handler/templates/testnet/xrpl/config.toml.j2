@@ -1,2 +1,7 @@
 ampd_url = "127.0.0.1:{{ amplifier.ampd.ports.grpc_port }}"
 chain_name = "xrpl"
+
+[monitoring_server]
+bind_address="0.0.0.0:{{ amplifier.xrpl.ports.monitoring_server_bind_addr }}"
+channel_size="1000"
+enabled="true"
