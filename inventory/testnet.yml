@@ -10,3 +10,30 @@ all:
           type: tofnd
         amplifier.axelar.testnet.encapsulate.xyz:
           type: ampd
+        amplifier_flow_host:
+          ansible_host: amplifier.axelar.testnet.encapsulate.xyz
+          type: flow
+        amplifier_xrplevm_host:
+          ansible_host: amplifier.axelar.testnet.encapsulate.xyz
+          type: xrplevm
+        amplifier_plume_host:
+          ansible_host: amplifier.axelar.testnet.encapsulate.xyz
+          type: plume
+        amplifier_monad_host:
+          ansible_host: amplifier.axelar.testnet.encapsulate.xyz
+          type: monad
+        amplifier_berachain_host:
+          ansible_host: amplifier.axelar.testnet.encapsulate.xyz
+          type: berachain
+        amplifier_hyperliquid_host:
+          ansible_host: amplifier.axelar.testnet.encapsulate.xyz
+          type: hyperliquid
+        amplifier_hedera_host:
+          ansible_host: amplifier.axelar.testnet.encapsulate.xyz
+          type: hedera
+        amplifier_sui_host:
+          ansible_host: amplifier.axelar.testnet.encapsulate.xyz
+          type: sui
+        amplifier_xrpl_host:
+          ansible_host: amplifier.axelar.testnet.encapsulate.xyz
+          type: xrpl

@@ -25,7 +25,47 @@ amplifier:
     ports:
       health_check_bind_addr: 3000
       grpc_port: 9090
-      monitoring_server_bind_addr: 3001
+      monitoring_server_bind_addr: 30001
+  flow:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+    ports:
+      monitoring_server_bind_addr: 30002
+  xrplevm:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+    ports:
+      monitoring_server_bind_addr: 30003
+  plume:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+    ports:
+      monitoring_server_bind_addr: 30004
+  monad:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+    ports:
+      monitoring_server_bind_addr: 30005
+  berachain:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+    ports:
+      monitoring_server_bind_addr: 30006
+  hyperliquid:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+    ports:
+      monitoring_server_bind_addr: 30007
+  hedera:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+    ports:
+      monitoring_server_bind_addr: 30008
+  xrpl:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+    ports:
+      monitoring_server_bind_addr: 30009
+  sui:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+    ports:
+      monitoring_server_bind_addr: 30010
+  stellar:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+    ports:
+      monitoring_server_bind_addr: 30011
 
 wasmvm:
   source_url: https://github.com/CosmWasm/wasmvm/releases/download

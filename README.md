@@ -110,7 +110,7 @@ vault:
       vault:
         url: "https://vault.hashicorp.encapsulate.xyz"
   mainnet:
-    bridge:
+    ampd:
       sui:
         rpc_url:
       eth:

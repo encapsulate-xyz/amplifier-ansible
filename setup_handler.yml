@@ -1,25 +1,21 @@
 ---
-- name: Set up ampd
+- name: Set up Handler
   hosts: all
   become: true
   gather_facts: true
-  vars:
-    allowed_node_types: [ampd]
   vars_files:
     - group_vars/all.yml
     - group_vars/vault.yml
     - group_vars/{{ env }}.yml
   pre_tasks:
     - name: Include environment setup tasks
-      when: type in allowed_node_types
       ansible.builtin.include_tasks: tasks/setup_environment.yml
   tasks:
-    - name: Setup environment and run ampd role
-      when: type in allowed_node_types
+    - name: Setup environment and run handler role
       block:
         - name: Include common handlers
           ansible.builtin.include_role:
             name: common
-        - name: Include ampd role
+        - name: Include handler role
           ansible.builtin.include_role:
-            name: ampd
+            name: handler
