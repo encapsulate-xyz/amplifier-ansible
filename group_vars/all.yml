@@ -26,6 +26,26 @@ amplifier:
       health_check_bind_addr: 3000
       grpc_port: 9090
       monitoring_server_bind_addr: 3001
+  flow:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+  xrplevm:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+  plume:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+  monad:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+  berachain:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+  hyperliquid:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+  hedera:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+  xrpl:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+  sui:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+  stellar:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
 
 wasmvm:
   source_url: https://github.com/CosmWasm/wasmvm/releases/download

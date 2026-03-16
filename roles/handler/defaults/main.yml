@@ -1,0 +1,18 @@
+---
+# Maintains directories and paths
+handler_home_dir: /opt/{{ service_identifier }}
+
+handler_bin_dir: "{{ handler_home_dir }}/bin"
+handler_config_dir: "{{ handler_home_dir }}/config"
+handler_log_dir: "{{ handler_home_dir }}/log"
+
+handler_directories:
+  - "{{ handler_home_dir }}"
+  - "{{ handler_bin_dir }}"
+  - "{{ handler_config_dir }}"
+  - "{{ handler_log_dir }}"
+
+handler_base_config_file_path: "{{ handler_config_dir }}/{{ handler_base_config_file_name }}"
+handler_chain_config_file_path: "{{ handler_config_dir }}/{{ handler_chain_config_file_name[type] }}"
+
+handler_log_file_path: "{{ handler_log_dir }}/{{ service_identifier }}.log"

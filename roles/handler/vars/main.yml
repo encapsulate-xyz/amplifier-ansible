@@ -1,0 +1,29 @@
+---
+# maintains file name, binary names, and anything which is not a diretcory or path
+
+# config file names
+handler_base_config_file_name: config.toml
+handler_chain_config_file_name: 
+  flow: evm-handler-config.toml
+  xrplevm: evm-handler-config.toml
+  plume: evm-handler-config.toml
+  monad: evm-handler-config.toml
+  berachain: evm-handler-config.toml
+  hyperliquid: evm-handler-config.toml
+  hedera: evm-handler-config.toml
+  xrpl: xrpl-handler-config.toml
+  sui: sui-handler-config.toml
+  stellar: stellar-handler-config.toml
+
+# binary names
+handler_default_binary_name: 
+  flow: evm-handler
+  xrplevm: evm-handler
+  plume: evm-handler
+  monad: evm-handler
+  berachain: evm-handler
+  hyperliquid: evm-handler
+  hedera: evm-handler
+  xrpl: xrpl-handler
+  sui: sui-handler
+  stellar: stellar-handler

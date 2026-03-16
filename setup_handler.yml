@@ -1,0 +1,21 @@
+---
+- name: Set up Handler
+  hosts: all
+  become: true
+  gather_facts: true
+  vars_files:
+    - group_vars/all.yml
+    - group_vars/vault.yml
+    - group_vars/{{ env }}.yml
+  pre_tasks:
+    - name: Include environment setup tasks
+      ansible.builtin.include_tasks: tasks/setup_environment.yml
+  tasks:
+    - name: Setup environment and run bridge role
+      block:
+        - name: Include common handlers
+          ansible.builtin.include_role:
+            name: common
+        - name: Include handler role
+          ansible.builtin.include_role:
+            name: handler

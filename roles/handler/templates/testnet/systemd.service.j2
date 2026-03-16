@@ -1,0 +1,17 @@
+[Unit]
+Description={{ service_identifier }}
+
+[Service]
+User={{ service_identifier }}
+Group={{ service_identifier }}
+WorkingDirectory={{ handler_home_dir }}
+ExecStart={{ handler_bin_dir }}/{{ service_identifier }} --config-dir {{ handler_config_dir }}
+Restart=always
+RestartSec=4
+LimitNOFILE=65536
+MemoryMax=64G
+StandardOutput=append:{{ handler_log_file_path }}
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target
