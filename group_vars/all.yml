@@ -66,6 +66,10 @@ amplifier:
     source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
     ports:
       monitoring_server_bind_addr: 30011
+  solana:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+    ports:
+      monitoring_server_bind_addr: 30012
 
 wasmvm:
   source_url: https://github.com/CosmWasm/wasmvm/releases/download

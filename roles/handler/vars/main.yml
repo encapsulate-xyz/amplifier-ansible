@@ -14,6 +14,7 @@ handler_chain_config_file_name:
   xrpl: xrpl-handler-config.toml
   sui: sui-handler-config.toml
   stellar: stellar-handler-config.toml
+  solana: solana-handler-config.toml
 
 # binary names
 handler_default_binary_name: 
@@ -27,3 +28,4 @@ handler_default_binary_name:
   xrpl: xrpl-handler
   sui: sui-handler
   stellar: stellar-handler
+  solana: solana-handler
