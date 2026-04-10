@@ -37,3 +37,6 @@ all:
         amplifier_xrpl_host:
           ansible_host: ts.amplifier.axelar.testnet.encapsulate.xyz
           type: xrpl
+        amplifier_solana_host:
+          ansible_host: ts.amplifier.axelar.testnet.encapsulate.xyz
+          type: solana
