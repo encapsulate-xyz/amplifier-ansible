@@ -4,6 +4,26 @@ amplifier:
   tofnd:
     version: v0.10.1
   ampd:
-    version: v1.13.2
+    version: v1.14.2
     vote_metrics_url: https://api.axelarscan.io/validator/searchVMPolls
   address: axelar1nppclnu328tgvxyvu0fmd6yder3r9mrrgusrj3
+  flow:
+    version: v0.1.1
+  xrplevm:
+    version: v0.1.1
+  plume:
+    version: v0.1.1
+  monad:
+    version: v0.1.1
+  berachain:
+    version: v0.1.1
+  hyperliquid:
+    version: v0.1.1
+  hedera:
+    version: v0.1.1
+  sui:
+    version: v0.1.1
+  xrpl:
+    version: v0.1.1
+  stellar:
+    version: v0.1.1
