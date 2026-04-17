@@ -37,3 +37,6 @@ all:
         amplifier_xrpl_host:
           ansible_host: ts.amplifier.axelar.mainnet.encapsulate.xyz
           type: xrpl
+        amplifier_stellar_host:
+          ansible_host: ts.amplifier.axelar.mainnet.encapsulate.xyz
+          type: stellar
