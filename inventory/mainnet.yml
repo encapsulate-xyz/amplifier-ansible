@@ -40,3 +40,6 @@ all:
         amplifier_stellar_host:
           ansible_host: ts.amplifier.axelar.mainnet.encapsulate.xyz
           type: stellar
+        amplifier_solana_host:
+          ansible_host: ts.amplifier.axelar.mainnet.encapsulate.xyz
+          type: solana
