@@ -27,3 +27,5 @@ amplifier:
     version: v0.1.1
   stellar:
     version: v0.1.1
+  solana:
+    version: v0.1.6

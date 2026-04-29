@@ -1,0 +1,7 @@
+ampd_url = "http://127.0.0.1:{{ amplifier.ampd.ports.grpc_port }}"
+chain_name = "solana"
+
+[monitoring_server]
+bind_address="0.0.0.0:{{ amplifier.solana.ports.monitoring_server_bind_addr }}"
+channel_size="1000"
+enabled="true"
