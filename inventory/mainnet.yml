@@ -10,21 +10,12 @@ all:
           type: tofnd
         ts.amplifier.axelar.mainnet.encapsulate.xyz:
           type: ampd
-        amplifier_flow_host:
-          ansible_host: ts.amplifier.axelar.mainnet.encapsulate.xyz
-          type: flow
         amplifier_xrplevm_host:
           ansible_host: ts.amplifier.axelar.mainnet.encapsulate.xyz
           type: xrplevm
-        amplifier_plume_host:
-          ansible_host: ts.amplifier.axelar.mainnet.encapsulate.xyz
-          type: plume
         amplifier_monad_host:
           ansible_host: ts.amplifier.axelar.mainnet.encapsulate.xyz
           type: monad
-        amplifier_berachain_host:
-          ansible_host: ts.amplifier.axelar.mainnet.encapsulate.xyz
-          type: berachain
         amplifier_hyperliquid_host:
           ansible_host: ts.amplifier.axelar.mainnet.encapsulate.xyz
           type: hyperliquid
