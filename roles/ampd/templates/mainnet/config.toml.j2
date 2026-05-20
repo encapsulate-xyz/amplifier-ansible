@@ -37,14 +37,6 @@ request_timeout = '30s'
 enabled = true
 bind_address = "0.0.0.0:{{ amplifier.ampd.ports.monitoring_server_bind_addr }}"
 
-# FLOW
-
-[[grpc.blockchain_service.chains]]
-chain_name="flow"
-multisig="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
-multisig_prover="axelar1rsuejfntt4rs2y8dn4dd3acszs00zyg9wpnsc6fmhevcp6plu5qspzn7e0"
-voting_verifier="axelar1kkqdsqvwq9a7p9fj0w89wpx2m2t0vrxl782aslhq0kdw2xxd2aesv3un04"
-
 # SUI
 
 [[grpc.blockchain_service.chains]]
@@ -76,22 +68,6 @@ chain_name="xrpl-evm"
 multisig="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
 multisig_prover="axelar198xehj5htckk75s8wcamxerxtdc45669zdqjmr69guveqntj9f6s5rqq55"
 voting_verifier="axelar1q8kn9t39ddpce42atk0d6wpdudr6djqxmz689m3nxy92ck0nnftqxfsuyk"
-
-# Plume 
-
-[[grpc.blockchain_service.chains]]
-chain_name="plume"
-multisig="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
-multisig_prover="axelar1ll4yhqtldlgqwqthyffqln3cyr2f8ydzhv0djpjyp6sk4v5k4kqqrs60s7"
-voting_verifier="axelar1nrdqke6tcxjuymg5gyd9x3yg35n3wrgarnj3sqskp98z2xnvlx9q82f63t"
-
-# Berachain
-
-[[grpc.blockchain_service.chains]]
-chain_name="berachain"
-multisig="axelar14a4ar5jh7ue4wg28jwsspf23r8k68j7g5d6d3fsttrhp42ajn4xq6zayy5"
-multisig_prover="axelar1k483q898t5w0acqzxhdjlsmnpgcxxa49ye8m46757n8mtk70ugtsu927xw"
-voting_verifier="axelar1xx6xdw6mwmfl6u2jygq0zfx2q6uyc8emtt29j9wg78l2l4p739nqmwsgal"
 
 # Hedera
 
