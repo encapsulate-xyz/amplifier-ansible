@@ -22,7 +22,7 @@
     dest: "{{ handler_chain_config_file_path }}"
     owner: "{{ service_identifier }}"
     group: "{{ service_identifier }}"
-    mode: "0644"
+    mode: "0600"
   notify:
     - Restart service
 
