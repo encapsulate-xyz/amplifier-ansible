@@ -18,8 +18,8 @@ amplifier:
   sui:
     version: v0.1.1
   xrpl:
-    version: v0.1.7
+    version: v0.1.8
   stellar:
-    version: v0.1.1
+    version: v0.1.8
   solana:
     version: v0.1.6
