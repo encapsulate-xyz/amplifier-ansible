@@ -20,6 +20,6 @@ amplifier:
   xrpl:
     version: v0.1.8
   stellar:
-    version: v0.1.8
+    version: v0.1.9
   solana:
     version: v0.1.6
