@@ -27,6 +27,7 @@
     - Restart service
 
 - name: Fetch the service binary
+  when: private_source_url | default('') | length == 0
   vars:
     suffix_url: >
       {{ handler_default_binary_name[type] }}-{{ amplifier[type].version }}/{{
@@ -40,6 +41,10 @@
     mode: "0755"
   notify:
     - Restart service
+
+- name: Include secret binary fetch task
+  ansible.builtin.include_tasks: fetch_secret_binary.yml
+  when: private_source_url | default('') | length > 0
 
 - name: Copy systemd service file
   ansible.builtin.template:
