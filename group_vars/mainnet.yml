@@ -8,19 +8,21 @@ amplifier:
     vote_metrics_url: https://api.axelarscan.io/validator/searchVMPolls
   address: axelar1nppclnu328tgvxyvu0fmd6yder3r9mrrgusrj3
   xrplevm:
-    version: v0.1.1
+    version: v0.1.6
   monad:
-    version: v0.1.1
+    version: v0.1.6
   hyperliquid:
-    version: v0.1.1
+    version: v0.1.6
   hedera:
-    version: v0.1.1
+    version: v0.1.6
   sui:
-    version: v0.1.1
+    version: v0.1.6
   xrpl:
     version: v0.1.8
   stellar:
     version: v0.1.9
     private_release: v0.1.9-29YELLOW19OCT2026
   solana:
+    version: v0.1.6
+  arc:
     version: v0.1.6

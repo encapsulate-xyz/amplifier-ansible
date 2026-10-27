@@ -29,6 +29,7 @@ handler_default_binary_name:
   sui: sui-handler
   stellar: stellar-handler
   solana: solana-handler
+  arc: evm-handler
 
 handler_private_release_name: >-
   {{ handler_default_binary_name[type] }}-{{ ansible_system | lower }}-{{ system_architecture }}-{{ amplifier[type].version }}

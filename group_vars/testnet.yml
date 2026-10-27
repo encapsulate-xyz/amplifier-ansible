@@ -8,15 +8,15 @@ amplifier:
     vote_metrics_url: https://testnet.api.axelarscan.io/validator/searchVMPolls
   address: axelar1gc40fw08ee4vamhvtgcszladfsrd8tyhc75l3j
   xrplevm:
-    version: v0.1.1
+    version: v0.1.6
   monad:
-    version: v0.1.1
+    version: v0.1.6
   hyperliquid:
-    version: v0.1.1
+    version: v0.1.6
   hedera:
-    version: v0.1.1
+    version: v0.1.6
   sui:
-    version: v0.1.1
+    version: v0.1.6
   xrpl:
     version: v0.1.8
   stellar:
