@@ -34,3 +34,6 @@ all:
         amplifier_solana_host:
           ansible_host: ts.amplifier.axelar.mainnet.encapsulate.xyz
           type: solana
+        amplifier_arc_host:
+          ansible_host: ts.amplifier.axelar.mainnet.encapsulate.xyz
+          type: arc
