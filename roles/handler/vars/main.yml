@@ -15,6 +15,7 @@ handler_chain_config_file_name:
   sui: sui-handler-config.toml
   stellar: stellar-handler-config.toml
   solana: solana-handler-config.toml
+  arc: evm-handler-config.toml
 
 # binary names
 handler_default_binary_name: 
