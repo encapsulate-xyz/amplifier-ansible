@@ -16,7 +16,7 @@ amplifier:
   hedera:
     version: v0.1.6
   sui:
-    version: v0.1.6
+    version: v0.2.1
   xrpl:
     version: v0.1.8
   stellar:
