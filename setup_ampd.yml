@@ -23,3 +23,15 @@
         - name: Include ampd role
           ansible.builtin.include_role:
             name: ampd
+            public: true
+  post_tasks:
+    - name: Verify ampd
+      when: type in allowed_node_types
+      block:
+        - name: Include verify service task
+          ansible.builtin.include_tasks: tasks/verify_service.yml
+          vars:
+            log_file_path: "{{ ampd_log_file_path }}"
+            version_command: "{{ ampd_bin_dir }}/{{ service_identifier }} --version"
+            expected_version: "{{ amplifier.ampd.version | regex_replace('^v', '') }}"
+            health_url: "http://localhost:{{ amplifier.ampd.ports.monitoring_server_bind_addr }}/status"

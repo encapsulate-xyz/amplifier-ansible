@@ -23,3 +23,14 @@
         - name: Include tofnd role
           ansible.builtin.include_role:
             name: tofnd
+            public: true
+  post_tasks:
+    - name: Verify tofnd
+      when: type in allowed_node_types
+      block:
+        - name: Include verify service task
+          ansible.builtin.include_tasks: tasks/verify_service.yml
+          vars:
+            log_file_path: "{{ tofnd_log_file_path }}"
+            version_command: "{{ tofnd_bin_dir }}/{{ service_identifier }} --version"
+            expected_version: "{{ amplifier.tofnd.version | regex_replace('^v', '') }}"

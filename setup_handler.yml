@@ -19,3 +19,14 @@
         - name: Include handler role
           ansible.builtin.include_role:
             name: handler
+            public: true
+  post_tasks:
+    - name: Verify handler
+      block:
+        - name: Include verify service task
+          ansible.builtin.include_tasks: tasks/verify_service.yml
+          vars:
+            log_file_path: "{{ handler_log_file_path }}"
+            version_command: "{{ handler_bin_dir }}/{{ service_identifier }} --version"
+            expected_version: "{{ amplifier[type].version | regex_replace('^v', '') }}"
+            health_url: "http://localhost:{{ amplifier[type].ports.monitoring_server_bind_addr }}/status"
