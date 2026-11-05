@@ -37,3 +37,6 @@ all:
         amplifier_arc_host:
           ansible_host: ts.amplifier.axelar.mainnet.encapsulate.xyz
           type: arc
+        amplifier_robinhood_host:
+          ansible_host: ts.amplifier.axelar.mainnet.encapsulate.xyz
+          type: robinhood

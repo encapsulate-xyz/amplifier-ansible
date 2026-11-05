@@ -16,6 +16,7 @@ handler_chain_config_file_name:
   stellar: stellar-handler-config.toml
   solana: solana-handler-config.toml
   arc: evm-handler-config.toml
+  robinhood: evm-handler-config.toml
 
 # binary names
 handler_default_binary_name:
@@ -31,6 +32,7 @@ handler_default_binary_name:
   stellar: stellar-handler
   solana: solana-handler
   arc: evm-handler
+  robinhood: evm-handler
 
 handler_private_release_name: >-
   {{ handler_default_binary_name[type] }}-{{ ansible_system | lower }}-{{ system_architecture }}-{{ amplifier[type].version }}

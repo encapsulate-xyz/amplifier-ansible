@@ -64,6 +64,10 @@ amplifier:
     source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
     ports:
       monitoring_server_bind_addr: 30013
+  robinhood:
+    source_url: https://github.com/axelarnetwork/axelar-amplifier/releases/download
+    ports:
+      monitoring_server_bind_addr: 30014
 
 wasmvm:
   source_url: https://github.com/CosmWasm/wasmvm/releases/download
