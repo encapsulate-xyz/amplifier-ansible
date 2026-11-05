@@ -26,3 +26,5 @@ amplifier:
     version: v0.1.6
   arc:
     version: v0.1.6
+  robinhood:
+    version: v0.1.6
